@@ -73,6 +73,89 @@ input:focus, textarea:focus, select:focus {
   display: contents;
 }
 
+/* Mobile Navigation */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.98);
+  z-index: 50;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.mobile-menu-close {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-menu-links a {
+  display: block;
+  padding: 0.75rem 1rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-foreground);
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.mobile-menu-links a:hover, 
+.mobile-menu-links a:focus {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+/* Branding styles */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand img {
+  height: 50px;
+  width: auto;
+}
+
+/* Nav button styles */
+.nav-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.nav-button:hover, 
+.nav-button:focus {
+  background-color: var(--color-accent);
+}
+
+.nav-button.active {
+  background-color: var(--color-primary);
+  color: white;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   h1 {
@@ -81,6 +164,10 @@ input:focus, textarea:focus, select:focus {
   
   h2 {
     font-size: 1.875rem;
+  }
+  
+  .brand img {
+    height: 40px;
   }
 }
 

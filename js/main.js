@@ -1,3 +1,4 @@
+
 // Main JavaScript for Kibuli Muslim Nursery School
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -14,6 +15,22 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeHeader();
   initializeFooter();
 });
+
+function initializeHeader() {
+  // Common header functionality if needed
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  if (mobileMenuButton) {
+    // Mobile menu toggle functionality can be added here
+  }
+}
+
+function initializeFooter() {
+  // Common footer functionality 
+  const currentYearElement = document.getElementById('current-year');
+  if (currentYearElement) {
+    currentYearElement.textContent = new Date().getFullYear();
+  }
+}
 
 function initializeHomePage() {
   const root = document.getElementById('root');
@@ -382,7 +399,7 @@ function initializeHomePage() {
     {
       title: "Kindergarten",
       description: "Preparing children for primary school with literacy, numeracy, and social skills.",
-      icon: '<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" /></svg>',
+      icon: '<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998a12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" /></svg>',
       ageRange: "5 - 6 years",
       delay: 3
     }
@@ -497,4 +514,101 @@ function initializeAboutPage() {
           <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
               <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                <svg class="w-6 h-6 text-primary" fill="
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-4">Our Mission</h3>
+              <p class="text-gray-600">
+                To provide quality education that nurtures the intellectual, physical, social, emotional, and spiritual development of children, preparing them to be confident, compassionate, and responsible global citizens grounded in Islamic values.
+              </p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-4">Our Vision</h3>
+              <p class="text-gray-600">
+                To be a leading early childhood education institution recognized for excellence in academics, character development, and Islamic values, where every child's potential is discovered and nurtured in a safe, inclusive, and stimulating environment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Kibuli Muslim Nursery School</h3>
+            <p class="text-gray-400 mb-4">
+              Providing quality education founded on Islamic values since 1980.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12z" />
+                </svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10c0-5.523-4.477-10-10-10zm3.11 8.03l-1.01 4.72c-.07.35-.27.45-.55.29l-1.55-1.15-1.67 1.6c-.2.2-.43.09-.52-.12l-.73-2.43-1.73-.57c-.39-.13-.4-.4.09-.59l6.83-2.63c.31-.12.61.09.48.48z" />
+                </svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10zm5.76 5.36c.68 0 1.24.56 1.24 1.24 0 .68-.56 1.24-1.24 1.24-.7 0-1.24-.56-1.24-1.24 0-.7.56-1.24 1.24-1.24zM12 7c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5zm0 2c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li><a href="index.html#hero-section" class="text-gray-400 hover:text-white">Home</a></li>
+              <li><a href="index.html#about-section" class="text-gray-400 hover:text-white">About Us</a></li>
+              <li><a href="index.html#programs-section" class="text-gray-400 hover:text-white">Our Programs</a></li>
+              <li><a href="index.html#gallery-section" class="text-gray-400 hover:text-white">Gallery</a></li>
+              <li><a href="index.html#contact-section" class="text-gray-400 hover:text-white">Contact</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Admissions</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-semibold mb-4">School Hours</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li class="flex justify-between">
+                <span>Monday - Friday:</span>
+                <span>7:30 AM - 4:30 PM</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Saturday:</span>
+                <span>9:00 AM - 12:00 PM</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Sunday:</span>
+                <span>Closed</span>
+              </li>
+            </ul>
+            <div class="mt-4">
+              <a href="index.html#contact-section" class="bg-primary text-white px-4 py-2 rounded-md inline-block hover:bg-primary/90 transition-colors">Contact Us</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+          <p>&copy; <span id="current-year"></span> Kibuli Muslim Nursery School. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  `;
+  
+  // Set current year in footer
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+}

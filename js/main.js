@@ -145,11 +145,21 @@ function createMainContent(activePage) {
 
 function createHeroSection() {
   return `
-    <section class="hero bg-primary text-white py-20 rounded-xl">
-      <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold mb-6">Welcome to Kibuli Muslim Nursery School</h2>
-        <p class="text-lg mb-8">Nurturing young minds through Islamic values and educational excellence.</p>
-        <a href="/admissions" class="bg-white text-primary py-3 px-8 rounded-full hover:bg-primary hover:text-white transition-colors">Enroll Now</a>
+    <section class="relative h-[600px] bg-primary text-white">
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+      <div class="container mx-auto px-6 relative z-10 flex flex-col justify-center items-center h-full text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeIn">
+          Kibuli Muslim Nursery School
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl animate-fadeIn">
+          Nurturing young minds with quality education founded on Islamic values
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <div id="enrollment-dialog-root"></div>
+          <a href="programs.html" class="bg-transparent border border-white px-8 py-3 rounded-full hover:bg-white/10 transition-all font-medium">
+            Our Programs
+          </a>
+        </div>
       </div>
     </section>
   `;

@@ -20,12 +20,22 @@
       }
     }
   </script>
-  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
 </head>
 <body>
   <div id="root"></div>
+  <div id="enrollment-dialog-root"></div>
   
   <!-- JavaScript -->
   <script src="js/main.js"></script>
+  <script type="module">
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import EnrollmentDialog from './src/components/EnrollmentDialog';
+
+    ReactDOM.render(
+      React.createElement(EnrollmentDialog),
+      document.getElementById('enrollment-dialog-root')
+    );
+  </script>
 </body>
 </html>

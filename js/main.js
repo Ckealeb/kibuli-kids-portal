@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileMenuClose.addEventListener('click', () => {
       mobileMenu.classList.remove('active');
       document.body.classList.remove('mobile-nav-open');
-    });
+      });
   }
 
   // Add event listener after the form is added to the DOM

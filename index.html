@@ -20,23 +20,14 @@
       }
     }
   </script>
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 </head>
 <body>
-  <div id="root"></div>
-  <div id="enrollment-dialog-root"></div>
+  <div id="root" data-page="home"></div>
   
   <!-- Lovable Script -->
   <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
   
   <!-- JavaScript -->
   <script src="js/main.js" type="module"></script>
-  <script type="module">
-    import EnrollmentDialog from './src/components/EnrollmentDialog.js';
-    
-    const root = ReactDOM.createRoot(document.getElementById('enrollment-dialog-root'));
-    root.render(React.createElement(EnrollmentDialog));
-  </script>
 </body>
 </html>

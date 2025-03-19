@@ -3,7 +3,7 @@
  * Main JavaScript file for Kibuli Muslim Nursery School website
  */
 
-import { createHeader, createMobileMenu, createFooter } from './components.js';
+import { createHeader, createMobileMenu, createFooter, createEnrollmentDialog } from './components.js';
 import { createMainContent } from './pages.js';
 import { handleEnrollmentSubmit } from './enrollment.js';
 
@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ${createMainContent(activePage)}
     ${createFooter()}
     ${createMobileMenu()}
+    ${createEnrollmentDialog()}
   `;
 
   // Mobile menu functionality
@@ -38,12 +39,37 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Add event listener after the form is added to the DOM
-  if (activePage === 'home') {
-    const enrollmentForm = document.getElementById('enrollment-form');
-    if (enrollmentForm) {
-      enrollmentForm.addEventListener('submit', handleEnrollmentSubmit);
-    }
+  // Enrollment dialog functionality
+  const openEnrollmentDialog = document.getElementById('open-enrollment-dialog');
+  const enrollmentDialog = document.getElementById('enrollment-dialog');
+  const closeEnrollmentDialog = document.getElementById('close-enrollment-dialog');
+  const dialogOverlay = document.getElementById('dialog-overlay');
+
+  if (openEnrollmentDialog && enrollmentDialog) {
+    openEnrollmentDialog.addEventListener('click', () => {
+      enrollmentDialog.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    });
+  }
+
+  if (closeEnrollmentDialog && enrollmentDialog) {
+    closeEnrollmentDialog.addEventListener('click', () => {
+      enrollmentDialog.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    });
+  }
+
+  if (dialogOverlay && enrollmentDialog) {
+    dialogOverlay.addEventListener('click', () => {
+      enrollmentDialog.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    });
+  }
+
+  // Add event listener to enrollment form
+  const enrollmentForm = document.getElementById('enrollment-form');
+  if (enrollmentForm) {
+    enrollmentForm.addEventListener('submit', handleEnrollmentSubmit);
   }
 
   // Make the handleEnrollmentSubmit function available globally

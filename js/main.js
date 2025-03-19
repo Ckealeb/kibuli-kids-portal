@@ -52,9 +52,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const enrollmentDialog = document.getElementById('enrollment-dialog');
   const closeEnrollmentDialog = document.getElementById('close-enrollment-dialog');
   const dialogOverlay = document.getElementById('dialog-overlay');
+  const programsEnrollButton = document.getElementById('programs-enroll-button');
 
   if (openEnrollmentDialog && enrollmentDialog) {
     openEnrollmentDialog.addEventListener('click', () => {
+      enrollmentDialog.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    });
+  }
+
+  if (programsEnrollButton && enrollmentDialog) {
+    programsEnrollButton.addEventListener('click', () => {
       enrollmentDialog.classList.remove('hidden');
       document.body.classList.add('overflow-hidden');
     });

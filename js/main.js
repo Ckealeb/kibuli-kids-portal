@@ -6,15 +6,23 @@
 import { createHeader, createMobileMenu, createFooter, createEnrollmentDialog } from './components.js';
 import { createMainContent } from './pages.js';
 import { handleEnrollmentSubmit } from './enrollment.js';
+import { createGalleryContent } from './gallery.js';
 
 document.addEventListener('DOMContentLoaded', function() {
   const root = document.getElementById('root');
   const activePage = root.dataset.page || 'home';
 
-  // Render the page structure
+  // Render the page structure with the appropriate content based on the active page
+  let mainContent;
+  if (activePage === 'gallery') {
+    mainContent = createGalleryContent();
+  } else {
+    mainContent = createMainContent(activePage);
+  }
+
   root.innerHTML = `
     ${createHeader(activePage)}
-    ${createMainContent(activePage)}
+    ${mainContent}
     ${createFooter()}
     ${createMobileMenu()}
     ${createEnrollmentDialog()}
@@ -73,6 +81,5 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Make the handleEnrollmentSubmit function available globally
-  // This is needed because it's called from HTML as an inline event handler
   window.handleEnrollmentSubmit = handleEnrollmentSubmit;
 });

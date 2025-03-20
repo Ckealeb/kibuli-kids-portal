@@ -88,6 +88,35 @@ document.addEventListener('DOMContentLoaded', function() {
     enrollmentForm.addEventListener('submit', handleEnrollmentSubmit);
   }
 
+  // Contact form submission handler
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(contactForm);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        subject: formData.get('subject'),
+        message: formData.get('message')
+      };
+
+      // Send email using mailto link as a fallback
+      const subject = encodeURIComponent(data.subject);
+      const body = encodeURIComponent(`
+        Name: ${data.name}
+        Email: ${data.email}
+        Phone: ${data.phone}
+
+        Message:
+        ${data.message}
+      `);
+
+      window.location.href = `mailto:kibulimuslimnurseryschool@gmail.com?subject=${subject}&body=${body}`;
+    });
+  }
+
   // Make the handleEnrollmentSubmit function available globally
   window.handleEnrollmentSubmit = handleEnrollmentSubmit;
 });

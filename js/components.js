@@ -1,3 +1,4 @@
+
 /**
  * UI Components for website
  */
@@ -150,7 +151,7 @@ export function createFooter() {
               <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
               <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
               <li><a href="programs.html" class="text-gray-400 hover:text-white">Programs</a></li>
-              <li><a href="admissions.html" class="text-gray-400 hover:text-white">Admissions</a></li>
+              <li><a href="gallery.html" class="text-gray-400 hover:text-white">Gallery</a></li>
               <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
             </ul>
           </div>
@@ -186,7 +187,7 @@ export function createEnrollmentDialog() {
         </button>
         
         <h3 class="text-xl font-semibold mb-6">Enrollment Application</h3>
-        <form id="enrollment-form" class="space-y-4" onsubmit="handleEnrollmentSubmit(event)">
+        <form id="enrollment-form" class="space-y-4">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label for="parentName" class="block text-sm font-medium text-gray-700 mb-1">Parent/Guardian Name</label>
